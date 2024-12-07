@@ -42,7 +42,6 @@ for sequence in sequences:
 print(total)
 
 #part 2
-
 changes = True
 while changes:
 	changes = False
