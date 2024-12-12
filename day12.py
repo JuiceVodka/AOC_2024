@@ -116,21 +116,14 @@ def count_sides(vectors, group):
 				if x_diff_prev != x_diff_curr and y_diff_prev != y_diff_curr:
 					total_sides += 1
 
-					y_dif_start = starting_vector[0][0] - starting_vector[1][0]
-					x_diff_start = starting_vector[0][1] - starting_vector[1][1]
-					if x_diff_curr == x_diff_start and y_diff_curr == y_dif_start and (starting_vector[1][0] == vector[1][0] or starting_vector[1][1] == vector[1][1]):
-						if (y_diff_curr != 0 and (starting_vector[0][1] == vector[1][1])) or (x_diff_curr != 0 and (starting_vector[0][0] == vector[1][0])) and len(vectors2) == 1:
-							total_sides -= 1
 				current_vector = vector
 				vectors2.remove(current_vector)
 				found_next = True
 				break
 
 		if not found_next:
-			total_sides += 1
 			starting_vector = vectors2[0]
 			current_vector = vectors2[0]
-			vectors2.remove(current_vector)
 
 	return total_sides
 
